@@ -1,0 +1,26 @@
+##
+# First milestone: Repeat annotation
+* using repet:
+  * Home: https://urgi.versailles.inra.fr/Tools/REPET
+  * Install: https://urgi.versailles.inra.fr/Tools/REPET/INSTALL (install even optional software dependencies)
+  * Tutorial: https://urgi.versailles.inra.fr/Tools/REPET/TEdenovo-tuto
+
+##
+# Second milestone: Gene annotation
+* using maker:
+  * Home: http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/Main_Page
+  * Tutorial: http://www.gmod.org/wiki/MAKER_Tutorial_2012
+
+##
+# Third milestone: Gene prediction
+* using SNAP:
+  * Home: http://korflab.ucdavis.edu/software.html
+* RNA-Seq trimming with Trimmomatic (prep for BRAKER):
+  * Home: http://www.usadellab.org/cms/?page=trimmomatic
+* using BRAKER:
+  * Home: https://github.com/Gaius-Augustus/BRAKER
+  * Notes: Augustus is a requirement, and proved interesting to complete build in the HPC environment. PerlBrew was
+           used to install/manage Perl, allowing for installation of CPAN and install of additional Perl modules. Of
+           the dependencies of Augustus, the bam* tools were most problematic, requiring customization of the Makefiles
+           to point to the location of various dependencies; and, most significantly, the manual resolution of 
+           dependent libraries using '-l:<full lib filename>', e.g. '-l:libcurl.so.4' (this for bam2wig).
