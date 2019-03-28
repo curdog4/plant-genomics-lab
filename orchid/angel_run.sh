@@ -24,7 +24,7 @@ function wait_jobmap()
             JOB_NAME=${PFX}-${JOB_SUFFIX}
             JOB_ID=$(squeue -h -n ${JOB_NAME} -o "%F")
             if [ -z $JOB_ID ]; then
-                unset ${JOB_MAP[$PFX]}
+                unset JOB_MAP[$PFX]
             else
                 echo "Waiting on job ${JOB_MAP[$PFX]} for $PFX..."
             fi
@@ -60,7 +60,7 @@ echo "Running ANGEL dumb prediction..."
 declare -A JOB_MAP
 for PFX in $INDICES; do
     ROOT_DIR=${SPEC_MAP[$PFX]}/angel
-    OUT_DIR=${ROOT_DIR}/angel/dumb
+    OUT_DIR=${ROOT_DIR}/dumb
     [ ! -d $OUT_DIR ] && mkdir -p $OUT_DIR
     SRC_CDS=${ROOT_DIR}/${PFX}_all_cds.fasta
     if [ ! -f $SRC_CDS ]; then
